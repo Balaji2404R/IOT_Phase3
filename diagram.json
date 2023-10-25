@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "author": "BBGS",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": -52.9,
+      "left": 62.2,
+      "attrs": { "env": "micropython-20231005-v1.21.0" }
+    },
+    { "type": "wokwi-microphone", "id": "mic", "top": -16.98, "left": 263.79, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "mic:1", "esp:D2", "green", [ "v0" ] ],
+    [ "mic:2", "esp:GND.1", "green", [ "v0" ] ]
+  ],
+  "serialMonitor": { "display": "plotter" },
+  "dependencies": {}
+}
